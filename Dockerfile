@@ -1,4 +1,4 @@
-# Version 1
+# Version 1.1
 # centos 7
 # Teamspeak Server 3.0.11.2
 
