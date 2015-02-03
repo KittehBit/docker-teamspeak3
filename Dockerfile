@@ -25,3 +25,14 @@ RUN cd /teamspeak/ && tar -xzf /teamspeak/installed/teamspeak3-server_linux-amd6
 # Expose the ports and place the entrypoint for automatic start
 EXPOSE 9987/udp 10011 30033
 ENTRYPOINT ["/teamspeak/teamspeak3-server_linux-amd64/ts3server_minimal_runscript.sh"]
+
+# Usage:
+#
+# To backup teamspeak data to the host:
+# docker cp <<container>>:/teamspeak/ /path/to/Dockerfile/.teamspeak/
+#
+# Build your own configured image
+# docker build -t kittehbit/teamspeak3 .
+#
+# To run the configured container in the background with open ports:
+# docker run -d --name teamspeak3 -p 9987:9987/udp -p 10011:10011 -p 30033:30033 kittehbit/teamspeak3
