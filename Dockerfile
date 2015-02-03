@@ -28,9 +28,6 @@ ENTRYPOINT ["/teamspeak/teamspeak3-server_linux-amd64/ts3server_minimal_runscrip
 
 # Usage:
 #
-# To backup teamspeak data to the host:
-# docker cp <<container>>:/teamspeak/ /path/to/Dockerfile/.teamspeak/
-#
 # Build your own configured image
 # docker build -t kittehbit/teamspeak3 .
 #
