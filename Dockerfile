@@ -1,5 +1,6 @@
 # Version 1.1
-# centos 7
+# Docker version 1.4.1
+# CentOS 7
 # Teamspeak Server 3.0.11.2
 
 FROM centos:7
@@ -11,6 +12,9 @@ ENV TEAMSPEAK_URL http://dl.4players.de/ts/releases/3.0.11.2/teamspeak3-server_l
 
 # Install the tools needed for this image
 RUN yum -y install tar
+
+# Optionally copy previous teamspeak data to the new image
+COPY .teamspeak/ /teamspeak/
 
 # Download the Teamspeak Server 3 tarball and place it in /teamspeak/installed/ (for future version reference)
 ADD ${TEAMSPEAK_URL} /teamspeak/installed/
